@@ -60,7 +60,7 @@ public class JwtService {
         return extractExpiration(jwt).before(new Date());
     }
 
-    private boolean extractExpiration(String jwt) {
-        return extractClaims(jwt, Claims::getExpiration);
+    private Date extractExpiration(String jwt) {
+        return extractClaim(jwt, Claims::getExpiration);
     }
 }
